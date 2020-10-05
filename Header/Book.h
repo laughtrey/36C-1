@@ -5,13 +5,12 @@ class Book{
 	private:
 	std::string m_language, m_condition;
 	int m_isbn;
+	int member_test_data;
 	public:
 	Book(const int &isbn, const std::string& language, const std::string& condition);
 	const int get_isbn();
 	const std::string get_language();
 	const std::string get_condition();
-	void return_book_info();
 };
-
-
+bool operator < (const Book& a, const Book& b);
 #endif
