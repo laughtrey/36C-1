@@ -5,6 +5,8 @@ CXXOBJS=$(patsubst %.cc,%.o,$(CXXSOURCE))
 
 SearchNewBooks: $(CXXOBJS)
 	    $(CXX) $(LDFLAGS) -o $@ $^
+	# REMOVE THIS LINE BEFORE SUBMIT
+	@create_testData 50 50
 
 run :
 	@echo "Running the program:"

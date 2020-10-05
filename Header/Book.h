@@ -8,9 +8,9 @@ class Book{
 	int member_test_data;
 	public:
 	Book(const int &isbn, const std::string& language, const std::string& condition);
-	const int get_isbn();
-	const std::string get_language();
-	const std::string get_condition();
+	int get_isbn() const;
+	std::string get_language() const;
+	std::string get_condition() const;
+	bool operator< (const Book& b) const;
 };
-bool operator < (const Book& a, const Book& b);
 #endif
