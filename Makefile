@@ -22,4 +22,5 @@ clean :
 	@rm -f SearchNewBooks
 	@rm -f request.dat
 	@rm -f newbooks.dat
+	@rm -f result.dat
 	@rm -f Source/*.o

@@ -22,3 +22,17 @@ bool Book::operator< (const Book& b) const{
 		return (get_isbn() < b.get_isbn());
 	}
 }
+std::vector<Book> Book::parseList(std::string fileName){
+	std::vector<Book> v;
+	int isbn = 0;
+	std::ifstream file(fileName.c_str());
+	std::string line;
+	while (std::getline(file, line)){
+		splitstring input(line);
+		std::vector<std::string> flds = input.split(',');	//Expected: [0] = ISBN, [1] = Language, [2] = Condition
+		std::stringstream isbnstring(flds[0]);			//Cast the ISBN string to int
+		isbnstring >> isbn;					//Cast the ISBN string to int 
+		v.push_back(Book(isbn, flds[1], flds[2]));		//push the new book back into the vector
+	}
+	return v;
+}
