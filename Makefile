@@ -10,7 +10,7 @@ SearchNewBooks: $(CXXOBJS)
 
 run :
 	@echo "Running the program:"
-	@./SearchNewBooks
+	@./SearchNewBooks newbooks.dat request.dat result.dat
 
 edit:
 	@vim Source/SearchNewBooks.cc
