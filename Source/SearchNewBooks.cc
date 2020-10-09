@@ -8,9 +8,12 @@
 #include "Stopwatch.h"
 #include "searchFunctions.h"
 int main(int argc, char *argv[]) {
+  //Declaring Variables
   Stopwatch ct;
   char search_type;
 
+  //Command line argument check
+  //This can be a function
   if (argc < 4 || argc > 5) {
     std::cerr << "Usage: "
               << "./SearchNewBooks <newbooks.dat> <request.dat> <result.dat>"
@@ -23,7 +26,7 @@ int main(int argc, char *argv[]) {
     std::cerr << "Error: cannot open file " << argv[2] << std::endl;
     return 1;
   }
-
+  //This can be a function
   std::string books_file = argv[1];    // arg1 should be books
   std::string request_file = argv[2];  // arg2 should be requests
   std::string result_file = argv[3];
@@ -32,6 +35,7 @@ int main(int argc, char *argv[]) {
   std::vector<Book> requests = Book::parseList(
       request_file);  // creating book objects and pushing them to the vector
 
+  //This can be a function
   std::cout << "Choice of search method ([l]inear, [b]inary)?" << std::endl;
   std::cin >> search_type;
   std::cin.clear();
@@ -56,7 +60,7 @@ int main(int argc, char *argv[]) {
   }
 
   std::ofstream outfile(result_file);
-
+  //This can be a function
   if (search_type == 'l' || search_type == 'L') {
     int result = ct.linear_stopwatch(newBooksList, requests);
     outfile << result;

@@ -1,4 +1,11 @@
 #include "searchFunctions.h"
+/**
+ * @brief searches all of nb for r linearlly
+ * 
+ * @param nb new book vector
+ * @param r requested book vector
+ * @return int number of times requested books found in new book vector
+ */
 int linear_search(const std::vector<Book> &nb, const std::vector<Book> &r) {
   int count = 0;
   for (auto i : nb) {
@@ -11,7 +18,13 @@ int linear_search(const std::vector<Book> &nb, const std::vector<Book> &r) {
   return count;
   // print to result.dat
 }
-
+/**
+ * @brief searches all of nb for r with binary search
+ * 
+ * @param nb new book vector
+ * @param r request book vector
+ * @return int number of times request books found in new book vector
+ */
 int binary_search_parse(const std::vector<Book> &nb,
                         const std::vector<Book> &r) {
   int count = 0;
@@ -21,7 +34,15 @@ int binary_search_parse(const std::vector<Book> &nb,
   return count;
   // print to result.dat
 }
-
+/**
+ * @brief recursive binary search function
+ * 
+ * @param v vector to search through
+ * @param from start point
+ * @param to end point
+ * @param value information requested
+ * @return int value found in vector returns 1 or true
+ */
 int binary_search(const std::vector<Book> &v, int from, int to,
                   const int &value) {
   if (from > to) return 0;
